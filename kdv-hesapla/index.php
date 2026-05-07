@@ -1,12 +1,12 @@
 <?php
 
-// KDV hesaplama fonksiyonu
+
 function kdvHesapla($fiyat, $kdvOrani)
 {
     return $fiyat * ($kdvOrani / 100);
 }
 
-// Toplam fiyat hesaplama fonksiyonu
+
 function toplamFiyatHesapla($fiyat, $kdvTutari)
 {
     return $fiyat + $kdvTutari;
@@ -17,11 +17,11 @@ $toplamFiyat = null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Formdan gelen verileri alıyoruz
+  
     $fiyat = $_POST["fiyat"];
     $kdvOrani = $_POST["kdv_orani"];
 
-    // Fonksiyonları kullanarak hesaplama yapıyoruz
+
     $kdvTutari = kdvHesapla($fiyat, $kdvOrani);
     $toplamFiyat = toplamFiyatHesapla($fiyat, $kdvTutari);
 }
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <title>KDV Hesaplama</title>
 
-    <!-- Bootstrap CDN -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
